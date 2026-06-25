@@ -68,3 +68,18 @@ print('\n0 deg Celsius to Farenheit')
 print(cels_2_far(0))
 print('\n98.6 deg Farenheit to Celsius')
 print(far_2_cels(98.6))
+
+# speed
+def mi_2_km(m): return (m * 1.609344) # roughly 1.5X
+def km_2_mi(k): return (k / 1.609344)
+
+print('\n65 mph to kph')
+print(mi_2_km(65))
+print('\n105 kph to mph')
+print(km_2_mi(105))
+
+# DNA conc (ng/uL) from OD260
+def od260_2_dna(o): return o * 50
+
+print('\nDNA concentration (ng/uL) from OD260 of 0.42')
+print(od260_2_dna(0.42))
