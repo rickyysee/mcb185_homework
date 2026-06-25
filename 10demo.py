@@ -172,4 +172,9 @@ print('1e-9', is_prob(1e-9))
 print('5/9', is_prob(5/9))
 print('e', is_prob(math.e))
 
-def 
+# return molecular weight of a DNA base, otherwise None
+def dna_weight(x):
+    if x == 'A' or x == 'a': return 313.2
+    if x == 'T' or x == 't': return 304.2
+    if x == 'G' or x == 'g': return 329.2
+    if x == 'C' or x == 'c': return 289.2
