@@ -96,3 +96,14 @@ b = 2
 if a == b:
     print('a equals b')
     print(a,'equals', b)
+
+# boolean
+c = a == b
+print(c, type(c))
+
+def is_even(x):
+    if x % 2 == 0: return True
+    return False
+
+print('2 is even:', is_even(2))
+print('3 is even:', is_even(3))
