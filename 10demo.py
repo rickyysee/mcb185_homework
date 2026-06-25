@@ -51,8 +51,7 @@ print(type(a), type(b), type(c), sep=', ', end='!\n') # print the types of our v
 # functions
 print("\nFunctions")
 def pythagoras(a, b): # initiates the function, which takes two arguments
-    c = math.sqrt(a**2 + b**2) # function operations, in this case pythagorean theorem
-    return c # return the value of c to the 'caller'
+    return math.sqrt(a**2 + b**2) # return pythagorean theorem result
 
 hyp = pythagoras(3, 4) # function is called and hyp is assigned the result
 print(hyp) 
