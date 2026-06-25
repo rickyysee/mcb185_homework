@@ -53,5 +53,4 @@ print("\nFunctions")
 def pythagoras(a, b): # initiates the function, which takes two arguments
     return math.sqrt(a**2 + b**2) # return pythagorean theorem result
 
-hyp = pythagoras(3, 4) # function is called and hyp is assigned the result
-print(hyp) 
+print(pythagoras(3, 4)) # print the result of the pythagoras function
