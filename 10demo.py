@@ -83,3 +83,16 @@ def od260_2_dna(o): return o * 50
 
 print('\nDNA concentration (ng/uL) from OD260 of 0.42')
 print(od260_2_dna(0.42))
+
+# strings
+print('\nStrings')
+s = 'hello world'
+print(s, type(s))
+
+# Conditionals
+print('\nConditionals')
+a = 2
+b = 2
+if a == b:
+    print('a equals b')
+    print(a,'equals', b)
