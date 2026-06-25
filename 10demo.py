@@ -50,20 +50,21 @@ print(type(a), type(b), type(c), sep=', ', end='!\n') # print the types of our v
 
 # functions
 print('\nFunctions')
+
+# geometry
 def pythagoras(a, b): # initiates the function, which takes two arguments
     return math.sqrt(a**2 + b**2) # return pythagorean theorem result
-
-print(pythagoras(3, 4)) # print the result of the pythagoras function
-
 def circle_area(r): return math.pi * r**2
 def rectangle_area(w, h): w * h
 def trangle_area(w, h): return rectangle_area(w, h) / 2 # divide rectangle area by 2
 
+print(pythagoras(3, 4)) # print the result of the pythagoras function
+
+# temperature
 def cels_2_far(c): return (c * (9/5)) + 32
 def far_2_cels(f): return (5/9) * (f-32)
 
 print('\n0 deg Celsius to Farenheit')
 print(cels_2_far(0))
-
 print('\n98.6 deg Farenheit to Celsius')
 print(far_2_cels(98.6))
