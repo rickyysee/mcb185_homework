@@ -107,3 +107,23 @@ def is_even(x):
 
 print('2 is even:', is_even(2))
 print('3 is even:', is_even(3))
+
+# if-elif-else
+a = 0.3
+b = 0.1 * 3
+
+if   a < b:  print('a < b')
+elif a <= b: print('a <= b')
+elif a == b: print('this will never print')
+
+if a < b or a > b: print('all things being equal, a and b are not')
+if a < b and a > b: print('you are living in a strange world')
+if not False: print(True)
+
+# never test for equality with floats
+# instead, see if their difference is below some threshold
+print(abs(a - b))
+if abs(a - b) < 1e-9: print('close enough')
+
+# math.isclose() also does this
+if math.isclose(a, b): print('close enough')
