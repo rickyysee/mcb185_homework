@@ -45,4 +45,14 @@ print("\nVariables")
 a = 3 # one side of triangle
 b = 4 # other side of triangle
 c = math.sqrt(a**2 + b**2) # calculate the hypotenuse
-print(c)
+print(c) # print value of c
+print(type(a), type(b), type(c), sep=', ', end='!\n') # print the types of our variables
+
+# functions
+print("\nFunctions")
+def pythagoras(a, b): # initiates the function, which takes two arguments
+    c = math.sqrt(a**2 + b**2) # function operations, in this case pythagorean theorem
+    return c # return the value of c to the 'caller'
+
+hyp = pythagoras(3, 4) # function is called and hyp is assigned the result
+print(hyp) 
