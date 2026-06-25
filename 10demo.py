@@ -13,7 +13,7 @@ comment
 """
 
 # general math
-print("\nGeneral Math")
+print('\nGeneral Math')
 print(1.5e-2) # scientific notation
 print(1 + 3) # addition; 4
 print(1 - 4) # subtraction; -3
@@ -25,7 +25,7 @@ print(10 % 3) # modulo; 1
 print(5 * (2 + 1)) # precedence; 15
 
 # math library
-print("\nMath Library")
+print('\nMath Library')
 print(math.ceil(5.6)) # round up; 6
 print(math.floor(5.6)) # round down; 5
 print(math.log(math.e**5)) # log base e; 5
@@ -36,12 +36,12 @@ print(math.pow(3, 2)) # exponentiation; 3^2 = 9
 print(math.factorial(5)) # factorial; 5! = 120
 
 # computer math is imprecise
-print("\nMath is Imprecise")
+print('\nMath is Imprecise')
 print(0.1 * 1) # returns 0.1
 print(0.1 * 3) # returns 0.30000000000000004
 
 # variables
-print("\nVariables")
+print('\nVariables')
 a = 3 # one side of triangle
 b = 4 # other side of triangle
 c = math.sqrt(a**2 + b**2) # calculate the hypotenuse
@@ -49,8 +49,21 @@ print(c) # print value of c
 print(type(a), type(b), type(c), sep=', ', end='!\n') # print the types of our variables
 
 # functions
-print("\nFunctions")
+print('\nFunctions')
 def pythagoras(a, b): # initiates the function, which takes two arguments
     return math.sqrt(a**2 + b**2) # return pythagorean theorem result
 
 print(pythagoras(3, 4)) # print the result of the pythagoras function
+
+def circle_area(r): return math.pi * r**2
+def rectangle_area(w, h): w * h
+def trangle_area(w, h): return rectangle_area(w, h) / 2 # divide rectangle area by 2
+
+def cels_2_far(c): return (c * (9/5)) + 32
+def far_2_cels(f): return (5/9) * (f-32)
+
+print('\n0 deg Celsius to Farenheit')
+print(cels_2_far(0))
+
+print('\n98.6 deg Farenheit to Celsius')
+print(far_2_cels(98.6))
