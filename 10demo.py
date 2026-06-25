@@ -34,3 +34,15 @@ print(math.log10(10**3)) # log base 10; 3
 print(math.sqrt(16)) # square root; 4
 print(math.pow(3, 2)) # exponentiation; 3^2 = 9
 print(math.factorial(5)) # factorial; 5! = 120
+
+# computer math is imprecise
+print("\nMath is Imprecise")
+print(0.1 * 1) # returns 0.1
+print(0.1 * 3) # returns 0.30000000000000004
+
+# variables
+print("\nVariables")
+a = 3 # one side of triangle
+b = 4 # other side of triangle
+c = math.sqrt(a**2 + b**2) # calculate the hypotenuse
+print(c)
