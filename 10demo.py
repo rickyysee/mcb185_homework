@@ -120,10 +120,56 @@ if a < b or a > b: print('all things being equal, a and b are not')
 if a < b and a > b: print('you are living in a strange world')
 if not False: print(True)
 
-# never test for equality with floats
+# never! test for equality with floats
 # instead, see if their difference is below some threshold
 print(abs(a - b))
 if abs(a - b) < 1e-9: print('close enough')
 
 # math.isclose() also does this
 if math.isclose(a, b): print('close enough')
+
+# strings
+print('\nStrings')
+s1 = 'A'
+s2 = 'B'
+s3 = 'a'
+if s1 < s2: print('A < B')
+if s2 < s3: print('B < a')
+
+a = 1
+s = 'G'
+# if a < s: print('a < s') # TypeError
+
+# 'None' type
+print('\nNone Type')
+def silly(m, x, b):
+    y = m*x + b # y is computed but not returned
+print(silly(2, 3, 4))
+
+# function practice
+# check if number is integer
+def is_integer(x):
+    if x % 1 == 0: return True # integers modulo 1 will be 0
+    return False
+
+print('\nAre the following numbers integers:')
+print('3', is_integer(3))
+print('13', is_integer(17))
+print('3.14', is_integer(3.14))
+print('-3', is_integer(-3))
+print('-3.14', is_integer(-3.14))
+print('0', is_integer(0))
+
+# check if a number is a valid probability
+def is_prob(x):
+    if x >= 0 and x <= 1: return True # probability must be within 0-1
+    return False
+
+print('\nAre the following numbers valid probabilities:')
+print('0.3', is_prob(0.3))
+print('-0.3', is_prob(-0.3))
+print('1e-9', is_prob(1e-9))
+print('5/9', is_prob(5/9))
+print('e', is_prob(math.e))
+
+def 
