@@ -199,3 +199,19 @@ print('c', dna_complement('c'))
 print('U', dna_complement('U'))
 print('N', dna_complement('N'))
 print('5', dna_complement(5))
+
+# return largest of 3 numbers
+def max_of_3(x, y, z):
+	if x >= y and x >= z: return x 
+	if y >= x and y >= z: return y 
+	if z >= y and z >= x: return z 
+
+print('\nFind the max in a set of three numbers:')
+print('1, 2, 3:', max_of_3(1, 2, 3))
+print('1, 3, 2:', max_of_3(1, 3, 2))
+print('2, 1, 3:', max_of_3(2, 1, 3))
+print('2, 3, 1:', max_of_3(2, 3, 1))
+print('3, 1, 2:', max_of_3(3, 1, 2))
+print('3, 2, 1:', max_of_3(3, 2, 1))
+print('1, 2, 2:', max_of_3(1, 2, 2))
+print('2, 2, 2:', max_of_3(2, 2, 2))
