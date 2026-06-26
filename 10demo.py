@@ -173,11 +173,11 @@ print('5/9', is_prob(5/9))
 print('e', is_prob(math.e))
 
 # return molecular weight of a DNA base, otherwise None
-def dna_weight(c):
-    if c == 'A' or c == 'a': return 313.2
-    if c == 'T' or c == 't': return 304.2
-    if c == 'G' or c == 'g': return 329.2
-    if c == 'C' or c == 'c': return 289.2
+def dna_weight(nt):
+    if nt == 'A' or nt == 'a': return 313.2
+    if nt == 'T' or nt == 't': return 304.2
+    if nt == 'G' or nt == 'g': return 329.2
+    if nt == 'C' or nt == 'c': return 289.2
 
 print('\nWhat are the molecular weights (g/mol) of the following DNA bases:')
 print('A', dna_weight('A'))
@@ -187,11 +187,11 @@ print('N', dna_weight('N'))
 print('5', dna_weight(5))
 
 # return complement of DNA letter, otherwise None
-def dna_complement(c):
-    if c == 'A' or c == 'a': return 'T'
-    if c == 'T' or c == 't': return 'A'
-    if c == 'G' or c == 'g': return 'C'
-    if c == 'C' or c == 'c': return 'G'
+def dna_complement(nt):
+    if nt == 'A' or nt == 'a': return 'T'
+    if nt == 'T' or nt == 't': return 'A'
+    if nt == 'G' or nt == 'g': return 'C'
+    if nt == 'C' or nt == 'c': return 'G'
 
 print('\nGet complementary base of following DNA bases:')
 print('A', dna_complement('A'))
