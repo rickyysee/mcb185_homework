@@ -7,7 +7,7 @@ print('hello, again') # greeting
 
 # this is a single line comment
 """
-This is a
+this is a
 multi-line
 comment
 """
@@ -61,8 +61,8 @@ def trangle_area(w, h): return rectangle_area(w, h) / 2 # divide rectangle area 
 print(pythagoras(3, 4)) # print the result of the pythagoras function
 
 # temperature
-def cels_2_far(c): return (c * (9/5)) + 32
-def far_2_cels(f): return (5/9) * (f-32)
+def cels_2_far(x): return (x * (9/5)) + 32
+def far_2_cels(x): return (5/9) * (x-32)
 
 print('\n0 deg Celsius to Farenheit')
 print(cels_2_far(0))
@@ -70,8 +70,8 @@ print('\n98.6 deg Farenheit to Celsius')
 print(far_2_cels(98.6))
 
 # speed
-def mi_2_km(m): return (m * 1.609344) # roughly 1.5X
-def km_2_mi(k): return (k / 1.609344)
+def mi_2_km(x): return (x * 1.609344) # roughly 1.5X
+def km_2_mi(x): return (x / 1.609344)
 
 print('\n65 mph to kph')
 print(mi_2_km(65))
@@ -79,7 +79,7 @@ print('\n105 kph to mph')
 print(km_2_mi(105))
 
 # DNA conc (ng/uL) from OD260
-def od260_2_dna(o): return o * 50
+def od260_2_dna(x): return x * 50
 
 print('\nDNA concentration (ng/uL) from OD260 of 0.42')
 print(od260_2_dna(0.42))
@@ -173,11 +173,11 @@ print('5/9', is_prob(5/9))
 print('e', is_prob(math.e))
 
 # return molecular weight of a DNA base, otherwise None
-def dna_weight(x):
-    if x == 'A' or x == 'a': return 313.2
-    if x == 'T' or x == 't': return 304.2
-    if x == 'G' or x == 'g': return 329.2
-    if x == 'C' or x == 'c': return 289.2
+def dna_weight(c):
+    if c == 'A' or c == 'a': return 313.2
+    if c == 'T' or c == 't': return 304.2
+    if c == 'G' or c == 'g': return 329.2
+    if c == 'C' or c == 'c': return 289.2
 
 print('\nWhat are the molecular weights (g/mol) of the following DNA bases:')
 print('A', dna_weight('A'))
@@ -187,11 +187,11 @@ print('N', dna_weight('N'))
 print('5', dna_weight(5))
 
 # return complement of DNA letter, otherwise None
-def dna_complement(x):
-    if x == 'A' or x == 'a': return 'T'
-    if x == 'T' or x == 't': return 'A'
-    if x == 'G' or x == 'g': return 'C'
-    if x == 'C' or x == 'c': return 'G'
+def dna_complement(c):
+    if c == 'A' or c == 'a': return 'T'
+    if c == 'T' or c == 't': return 'A'
+    if c == 'G' or c == 'g': return 'C'
+    if c == 'C' or c == 'c': return 'G'
 
 print('\nGet complementary base of following DNA bases:')
 print('A', dna_complement('A'))
