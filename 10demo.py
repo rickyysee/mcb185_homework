@@ -178,3 +178,24 @@ def dna_weight(x):
     if x == 'T' or x == 't': return 304.2
     if x == 'G' or x == 'g': return 329.2
     if x == 'C' or x == 'c': return 289.2
+
+print('\nWhat are the molecular weights (g/mol) of the following DNA bases:')
+print('A', dna_weight('A'))
+print('c', dna_weight('c'))
+print('U', dna_weight('U'))
+print('N', dna_weight('N'))
+print('5', dna_weight(5))
+
+# return complement of DNA letter, otherwise None
+def dna_complement(x):
+    if x == 'A' or x == 'a': return 'T'
+    if x == 'T' or x == 't': return 'A'
+    if x == 'G' or x == 'g': return 'C'
+    if x == 'C' or x == 'c': return 'G'
+
+print('\nGet complementary base of following DNA bases:')
+print('A', dna_complement('A'))
+print('c', dna_complement('c'))
+print('U', dna_complement('U'))
+print('N', dna_complement('N'))
+print('5', dna_complement(5))
