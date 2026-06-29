@@ -215,3 +215,15 @@ print('3, 1, 2:', max_of_3(3, 1, 2))
 print('3, 2, 1:', max_of_3(3, 2, 1))
 print('1, 2, 2:', max_of_3(1, 2, 2))
 print('2, 2, 2:', max_of_3(2, 2, 2))
+
+# return sensitivity, specificity, and F1 score from positives and negatives
+def bin_classify(tp, tn, fp, fn):
+	sens = tp / (tp + fn) # rate of correct positives out of actual positives
+	spec = tn / (tn + fp) # rate of correct negatives out of actual negatives
+	prec = tp / (tp + fp) # rate of correct positives out of detected positives
+	f1   = 2 * (prec * sens)/(prec + sens)
+	return sens, spec, f1
+
+print('\nFind the sensitivity, specificity, and F1 scores for the following confusion matrices:')
+print('TP, TN, FP, FN: (Sensitivity, Specificity, F1 Score)')
+print('05, 05, 02, 01:', bin_classify(5, 5, 2, 1))
