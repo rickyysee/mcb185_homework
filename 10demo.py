@@ -227,3 +227,22 @@ def bin_classify(tp, tn, fp, fn):
 print('\nFind the sensitivity, specificity, and F1 scores for the following confusion matrices:')
 print('TP, TN, FP, FN: (Sensitivity, Specificity, F1 Score)')
 print('05, 05, 02, 01:', bin_classify(5, 5, 2, 1))
+
+# get Shannon entropy from counts of bases
+def shannon_term(nt, total):
+	if nt == 0: return 0
+	return nt/total * math.log2(nt/total) # get the Shannon term for any nucleotide
+
+def shannon_entropy(a, t, c, g):
+	total = a + t + c + g # calculate the total to feed to shannon_term() function
+	Ha = shannon_term(a, total) # Shannon term for A
+	Ht = shannon_term(t, total) # Shannon term for T
+	Hc = shannon_term(c, total) # Shannon term for C
+	Hg = shannon_term(g, total) # Shannon term for G
+	return -(Ha + Ht + Hc + Hg)
+
+print('\nCalculate the Shannon entropy for the following counts of nucleotides:')
+print('A , T , C , G : Shannon')
+print('50, 50, 50, 50:', shannon_entropy(50, 50, 50, 50))
+print('0 , 0 , 50, 50:', shannon_entropy(0, 0, 50, 50))
+print('0 , 50, 50, 50:', shannon_entropy(0, 50, 50, 50))
