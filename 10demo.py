@@ -53,7 +53,7 @@ print('\nFunctions')
 
 # geometry
 def pythagoras(a, b): # initiates the function, which takes two arguments
-    return math.sqrt(a**2 + b**2) # return pythagorean theorem result
+	return math.sqrt(a**2 + b**2) # return pythagorean theorem result
 def circle_area(r): return math.pi * r**2
 def rectangle_area(w, h): w * h
 def trangle_area(w, h): return rectangle_area(w, h) / 2 # divide rectangle area by 2
@@ -94,16 +94,16 @@ print('\nConditionals')
 a = 2
 b = 2
 if a == b:
-    print('a equals b')
-    print(a,'equals', b)
+	print('a equals b')
+	print(a,'equals', b)
 
 # boolean
 c = a == b
 print(c, type(c))
 
 def is_even(x):
-    if x % 2 == 0: return True
-    return False
+	if x % 2 == 0: return True
+	return False
 
 print('2 is even:', is_even(2))
 print('3 is even:', is_even(3))
@@ -143,14 +143,14 @@ s = 'G'
 # 'None' type
 print('\nNone Type')
 def silly(m, x, b):
-    y = m*x + b # y is computed but not returned
+	y = m*x + b # y is computed but not returned
 print(silly(2, 3, 4))
 
 # function practice
 # check if number is integer
 def is_integer(x):
-    if x % 1 == 0: return True # integers modulo 1 will be 0
-    return False
+	if x % 1 == 0: return True # integers modulo 1 will be 0
+	return False
 
 print('\nAre the following numbers integers:')
 print('3', is_integer(3))
@@ -162,8 +162,8 @@ print('0', is_integer(0))
 
 # check if a number is a valid probability
 def is_prob(x):
-    if x >= 0 and x <= 1: return True # probability must be within 0-1
-    return False
+	if x >= 0 and x <= 1: return True # probability must be within 0-1
+	return False
 
 print('\nAre the following numbers valid probabilities:')
 print('0.3', is_prob(0.3))
@@ -174,10 +174,10 @@ print('e', is_prob(math.e))
 
 # return molecular weight of a DNA base, otherwise None
 def dna_weight(nt):
-    if nt == 'A' or nt == 'a': return 313.2
-    if nt == 'T' or nt == 't': return 304.2
-    if nt == 'G' or nt == 'g': return 329.2
-    if nt == 'C' or nt == 'c': return 289.2
+	if nt == 'A' or nt == 'a': return 313.2
+	if nt == 'T' or nt == 't': return 304.2
+	if nt == 'G' or nt == 'g': return 329.2
+	if nt == 'C' or nt == 'c': return 289.2
 
 print('\nWhat are the molecular weights (g/mol) of the following DNA bases:')
 print('A', dna_weight('A'))
@@ -188,10 +188,10 @@ print('5', dna_weight(5))
 
 # return complement of DNA letter, otherwise None
 def dna_complement(nt):
-    if nt == 'A' or nt == 'a': return 'T'
-    if nt == 'T' or nt == 't': return 'A'
-    if nt == 'G' or nt == 'g': return 'C'
-    if nt == 'C' or nt == 'c': return 'G'
+	if nt == 'A' or nt == 'a': return 'T'
+	if nt == 'T' or nt == 't': return 'A'
+	if nt == 'G' or nt == 'g': return 'C'
+	if nt == 'C' or nt == 'c': return 'G'
 
 print('\nGet complementary base of following DNA bases:')
 print('A', dna_complement('A'))
