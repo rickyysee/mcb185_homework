@@ -7,8 +7,9 @@ def ascii_to_qual(n):
 
 # function to get quality and error rate from an ASCII character
 def char_to_prob(c):
-	p = 10 ** -(ord(c)/10) # calculate the error rate, p
-	return ord(c), p # ord(c) returns ASCII value 
+	q = ascii_to_qual(ord(c)) # calculate the quality score from ASCII value, ord(c)
+	p = 10 ** -(q/10) # calculate the error rate, p
+	return q, p
 
 print('Get the quality and Phred error rate from the following ASCII characters:')
 print('Char: (Q , Prob)')
