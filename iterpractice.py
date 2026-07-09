@@ -10,3 +10,10 @@ def triangular_num(n):
 print('Triangular number of 5 is:', triangular_num(5))
 
 # function that calculates factorial of a number
+def factorial(n):
+	current = 1 # initialize variable to store product
+	for i in range(1, n+1):
+		current = current * i # store the product of current variable
+		print(i, current)
+	return(current)
+print('Factorial of 5 is:', factorial(5))
