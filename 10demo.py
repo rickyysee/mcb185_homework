@@ -272,3 +272,8 @@ for i in range(5): # default is to start at 0
 for i in range(5): print(i)
 for i in range(0, 5): print(i)
 for i in range(0, 5, 1): print(i)
+
+# example of nesting function blocks
+for i in range(7):
+	if i % 2 == 0: print(i, 'is even')
+	else:          print(i, 'is odd')
