@@ -274,6 +274,6 @@ for i in range(0, 5): print(i)
 for i in range(0, 5, 1): print(i)
 
 # example of nesting function blocks
-for i in range(7):
-	if i % 2 == 0: print(i, 'is even')
+for i in range(7): # for loop from 0-6
+	if i % 2 == 0: print(i, 'is even') # conditional for checking if even
 	else:          print(i, 'is odd')
