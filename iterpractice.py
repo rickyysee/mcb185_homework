@@ -17,3 +17,6 @@ def factorial(n):
 		print(i, current)
 	return(current)
 print('Factorial of 5 is:', factorial(5))
+
+# Poisson probability of k events occurring with an expectation of n:
+# n^k e^-n / k!
