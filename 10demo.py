@@ -260,7 +260,15 @@ while i < 10:
 print('final value of i is:', i)
 
 # for loops
-for i in range(1, 10, 3):
+# range() generates list of values
+for i in range(1, 10, 3): # start at 1, end at 10, increment by 3
 	print(i)
-for i in range(0, 5):
+for i in range(0, 5): # default is to increment by 1
 	print(i)
+for i in range(5): # default is to start at 0
+	print(i)
+
+# the following range() functions generate same list
+for i in range(5): print(i)
+for i in range(0, 5): print(i)
+for i in range(0, 5, 1): print(i)
