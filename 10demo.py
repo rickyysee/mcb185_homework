@@ -261,7 +261,7 @@ print('final value of i is:', i)
 
 # for loops
 # range() generates list of values
-for i in range(1, 10, 3): # start at 1, end at 10, increment by 3
+for i in range(1, 10, 3): # start at 1, end before 10, increment by 3
 	print(i)
 for i in range(0, 5): # default is to increment by 1
 	print(i)
