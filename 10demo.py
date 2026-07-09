@@ -246,3 +246,21 @@ print('A , T , C , G : Shannon')
 print('50, 50, 50, 50:', shannon_entropy(50, 50, 50, 50))
 print('0 , 0 , 50, 50:', shannon_entropy(0, 0, 50, 50))
 print('0 , 50, 50, 50:', shannon_entropy(0, 50, 50, 50))
+
+# unit1.3 Iteration
+# while loops
+i = 0
+while i < 3:
+	i = 1 + i
+	print('hey', i)
+i = 1
+while i < 10:
+	print(i)
+	i = i + 3
+print('final value of i is:', i)
+
+# for loops
+for i in range(1, 10, 3):
+	print(i)
+for i in range(0, 5):
+	print(i)
