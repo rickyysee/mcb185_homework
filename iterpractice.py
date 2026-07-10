@@ -68,3 +68,11 @@ print('11:', is_prime(11))
 print('1035:', is_prime(1035))
 print('9677:', is_prime(9677))
 # print('4393139:', is_prime(4393139))
+
+# estimate pi (3.14159...) using Nilakantha series
+def pi_est(n):
+	nilak = 3
+	for i in range(0, n+1): 
+		nilak = nilak + (4 * (-1)**i) / (factorial(4 + 2*i) / factorial(1 + 2*i))
+	return nilak
+print('Pi estimated with 10 iterations:', pi_est(10))
