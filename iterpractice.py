@@ -49,7 +49,7 @@ def is_prime(n):
 	if n == 2:           return True  # 2 is prime
 	if n % 2 == 0:       return False # even numbers are not prime
 	factors = 0 # set the number of factors to 0
-	for i in range(1, n):
+	for i in range(1, n//2):
 		if n % i == 0:   factors = factors + 1 # count number of factors to n-1
 		if factors > 1:  return False # if more than 1 factors (1 is known)
 	return True # if not enough factors found, number is prime
