@@ -37,11 +37,11 @@ print('5 choose 5 is:', combination(5, 5))
 # estimate Euler's number (e = 2.71828...)
 # infinite sum of 1/n!
 # choose finite number of iterations
-def euler_est(n):
+def euler(n):
 	current = 0
 	for i in range(n): current = current + 1/factorial(i)
 	return current
-print('Estimating Euler\'s number with 10 iterations is:', euler_est(10))
+print('Estimating Euler\'s number with 10 iterations is:', euler(10))
 
 # determine if a number is prime
 def is_prime(n):
