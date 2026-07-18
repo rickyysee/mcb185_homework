@@ -47,28 +47,17 @@ print('Estimating Euler\'s number with 10 iterations is:', euler(10))
 def is_prime(n):
 	if n == 0 or n == 1: return False # 0 and 1 are not prime
 	if n == 2:           return True  # 2 is prime
-	if n % 2 == 0:       return False # even numbers are not prime
+	if n % 2 == 0:       return False # other even numbers are not prime
 	factors = 0 # set the number of factors to 0
 	for i in range(1, n//2):
 		if n % i == 0:   factors = factors + 1 # count number of factors to n-1
 		if factors > 1:  return False # if more than 1 factors (1 is known)
 	return True # if not enough factors found, number is prime
+
 print('Prime numbers:')
-print('0:', is_prime(0))
-print('1:', is_prime(1))
-print('2:', is_prime(2))
-print('3:', is_prime(3))
-print('4:', is_prime(4))
-print('5:', is_prime(5))
-print('6:', is_prime(6))
-print('7:', is_prime(7))
-print('8:', is_prime(8))
-print('9:', is_prime(9))
-print('10:', is_prime(10))
-print('11:', is_prime(11))
-print('1035:', is_prime(1035))
-print('9677:', is_prime(9677))
-# print('4393139:', is_prime(4393139))
+for i in range(0,11): print(i, is_prime(i)) # for loop of tests
+print('1035', is_prime(1035))
+print('9677', is_prime(9677))
 
 # estimate pi (3.14159...) using Nilakantha series
 def pi_est(n):
