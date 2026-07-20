@@ -70,3 +70,13 @@ def pi_est(n):
 print('Pi estimated up to 10 iterations:')
 for i in range(1, 11):
 	print(pi_est(i))
+
+# monty pi-thon (estimate pi using monte carlo methods)
+# algorithm:
+# generate random values for x and y from 0 - 1
+# caclulate distance to origin
+# if distance is less than 1, point is inside the circular arc
+# ratio of points that fall inside compared to total is pi/4
+# output each iteration
+def monty_pithon(n):
+	
