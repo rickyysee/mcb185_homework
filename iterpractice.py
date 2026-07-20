@@ -1,5 +1,6 @@
 # iterpractice.py by Ricky Cantua
 import math
+import random
 
 # function that calculates the triangular number (sum of numbers from 1 to n)
 def triangular_num(n):
@@ -78,5 +79,12 @@ for i in range(1, 11):
 # if distance is less than 1, point is inside the circular arc
 # ratio of points that fall inside compared to total is pi/4
 # output each iteration
-def monty_pithon(n):
-	
+inside = total = 0
+while True:
+	x = random.random()
+	y = random.random()
+	dist = math.sqrt(x**2 + y**2)
+	if dist <= 1: inside += 1
+	total += 1
+	pi = 4 * inside/total
+	print(pi)
