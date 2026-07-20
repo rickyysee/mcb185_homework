@@ -79,12 +79,12 @@ for i in range(1, 11):
 # if distance is less than 1, point is inside the circular arc
 # ratio of points that fall inside compared to total is pi/4
 # output each iteration
-inside = total = 0
+inside = total = 0 # initialize variables
 while True:
-	x = random.random()
+	x = random.random() # get random (x, y) coordinate
 	y = random.random()
-	dist = math.sqrt(x**2 + y**2)
-	if dist <= 1: inside += 1
-	total += 1
-	pi = 4 * inside/total
+	dist = math.sqrt(x**2 + y**2) # calc distance with pythagorean theorem
+	if dist <= 1: inside += 1 # check if point is in circle
+	total += 1 # increment amount of points
+	pi = 4 * inside/total # calc pi from ratio
 	print(pi)
