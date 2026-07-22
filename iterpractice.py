@@ -89,4 +89,5 @@ while False:
 	pi = 4 * inside/total # calc pi from ratio
 	print(pi)
 
-# DnD stats
+# average DnD stat value using various rules
+# roll 3 six-sided dice
