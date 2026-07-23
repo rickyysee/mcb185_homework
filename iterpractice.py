@@ -68,8 +68,8 @@ def pi_est(n):
 		nilak = nilak + (4 * (-1)**i) / (factorial(4 + 2*i) / factorial(1 + 2*i))
 	return nilak
 # test code
-print('Pi estimated up to 10 iterations:')
-for i in range(1, 11):
+print('Pi estimated up to 5 iterations:')
+for i in range(1, 6):
 	print(pi_est(i))
 
 # monty pi-thon (estimate pi using monte carlo methods)
@@ -80,7 +80,7 @@ for i in range(1, 11):
 # ratio of points that fall inside compared to total is pi/4
 # output each iteration
 inside = total = 0 # initialize variables
-while False:
+while False: # change to True if want to run
 	x = random.random() # get random (x, y) coordinate
 	y = random.random()
 	dist = math.sqrt(x**2 + y**2) # calc distance with pythagorean theorem
@@ -91,3 +91,16 @@ while False:
 
 # average DnD stat value using various rules
 # roll 3 six-sided dice
+def dice_roll(n, option):
+	sum = 0
+	if option == 'default':
+		for i in range(1, n+1): sum = sum + random.randint(1, 6)
+		return sum / n
+	elif option == 'reroll': # maybe I can solve this simply by setting range(2, 6) but I want to try the reroll
+		for i in range(1, n+1):
+			roll = random.randint(1, 6)
+			if roll <= 1:
+				roll = random.randint(1, 6)
+
+	
+print(dice_roll(3, 'default'))
