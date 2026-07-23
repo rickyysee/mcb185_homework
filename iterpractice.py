@@ -43,7 +43,7 @@ def euler(n):
 	for i in range(n): current = current + 1/factorial(i)
 	return current
 # test code
-print('Estimating Euler\'s number with 10 iterations is:', euler(10))
+print('\nEstimating Euler\'s number with 10 iterations is:', euler(10))
 
 # determine if a number is prime
 def is_prime(n):
@@ -56,7 +56,7 @@ def is_prime(n):
 		if factors > 1:  return False # if more than 1 factors (1 is known)
 	return True # if not enough factors found, number is prime
 # test code
-print('Prime numbers:')
+print('\nPrime numbers:')
 for i in range(0,11): print(i, is_prime(i)) # for loop of tests
 print('1035', is_prime(1035))
 print('9677', is_prime(9677))
@@ -68,7 +68,7 @@ def pi_est(n):
 		nilak = nilak + (4 * (-1)**i) / (factorial(4 + 2*i) / factorial(1 + 2*i))
 	return nilak
 # test code
-print('Pi estimated up to 5 iterations:')
+print('\nPi estimated up to 5 iterations:')
 for i in range(1, 6):
 	print(pi_est(i))
 
@@ -111,9 +111,19 @@ def dice_roll(n, option):
 		for i in range(1, n+1):
 			# the roll will be the max of two random ints
 			roll = max(random.randint(1, 6), random.randint(1, 6)) 
+			sum = sum + roll
 		return sum / n
-
-
+	elif option == 'D6d1':
+		min = random.randint(1, 6) # initialize a roll
+		sum = sum + min
+		for i in range(1, n): # roll remaining times
+			roll = random.randint(1, 6)
+			sum = sum + roll
+			if roll < min: min = roll # if this roll is smaller than initial, change the min
+		return (sum - min) / (n - 1)
+# test code
+print('\nDnD Stats:')
 print('3D6  :', dice_roll(3, 'D6'))
 print('3D6r1:', dice_roll(3, 'D6r1'))
 print('3D6x2:', dice_roll(3, 'D6x2'))
+print('4D6d1:', dice_roll(4, 'D6d1'))
