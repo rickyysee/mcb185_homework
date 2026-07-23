@@ -90,24 +90,30 @@ while False: # change to True if want to run
 	print(pi)
 
 # average DnD stat value using various rules
-# D6 = roll n six-sided dice
+# D6 = roll six-sided dice
 # r1 = reroll any 1's
 # x2 = roll pairs and take highest each time
+# d1 = drop 1 lowest
 def dice_roll(n, option):
-	sum = 0
+	sum = 0 # initialize a variable for the sum
 	if option == 'D6':
-		for i in range(1, n+1): sum = sum + random.randint(1, 6)
-		return sum / n
-	elif option == 'D6r1': # maybe I can solve this simply by setting range(2, 6) but I want to try the reroll
+		# for each roll, increment the sum
+		for i in range(1, n+1): sum = sum + random.randint(1, 6) 
+		return sum / n # divide by n to get average
+	elif option == 'D6r1':
 		for i in range(1, n+1):
-			roll = random.randint(1, 6)
-			print(roll)
-			while roll <= 1:
+			roll = random.randint(1, 6) # store a roll
+			while roll <= 1: # keep rerolling until the roll is greater than 1
 				roll = random.randint(1, 6)
-				print(roll)
-			sum = sum + roll
+			sum = sum + roll # increment sum by each roll
+		return sum / n
+	elif option == 'D6x2':
+		for i in range(1, n+1):
+			# the roll will be the max of two random ints
+			roll = max(random.randint(1, 6), random.randint(1, 6)) 
 		return sum / n
 
 
-print('3D6  :', dice_roll(3, 'd6'))
-print('3D6r1:', dice_roll(3, 'reroll'))
+print('3D6  :', dice_roll(3, 'D6'))
+print('3D6r1:', dice_roll(3, 'D6r1'))
+print('3D6x2:', dice_roll(3, 'D6x2'))
