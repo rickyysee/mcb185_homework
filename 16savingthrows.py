@@ -13,11 +13,13 @@ def saving_throw(DC, adv):
 	if roll >= DC : return 'Success'
 	elif roll < DC: return 'Failure'
 # test code
-print('DC of 5:', saving_throw(5, None))
-print('DC of 10:', saving_throw(10, None))
-print('DC of 15:', saving_throw(15, None))
-print('\nDisadvantage:')
-print('DC of 5:', saving_throw(5, 'disadvantage'))
-print('DC of 10:', saving_throw(10, 'disadvantage'))
-print('DC of 15:', saving_throw(15, 'disadvantage'))
-print('\nAdvantage:')
+print('DC', 'ADV', 'Result', sep='\t')
+print('05', 'None', saving_throw(5, None), sep='\t')
+print('10', 'None', saving_throw(10, None), sep='\t')
+print('15', 'None', saving_throw(15, None), sep='\t')
+print('05', 'Dis', saving_throw(5, 'disadvantage'), sep='\t')
+print('10', 'Dis', saving_throw(10, 'disadvantage'), sep='\t')
+print('15', 'Dis', saving_throw(15, 'disadvantage'), sep='\t')
+print('05', 'Adv', saving_throw(5, 'advantage'), sep='\t')
+print('10', 'Adv', saving_throw(10, 'advantage'), sep='\t')
+print('15', 'Adv', saving_throw(15, 'advantage'), sep='\t')
