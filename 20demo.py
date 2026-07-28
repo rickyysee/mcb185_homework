@@ -26,7 +26,7 @@ print(f'{math.pi:.3f}')        # 3 fixed digits after decimal
 print(f'{1e6 * math.pi:e}')    # exponent notation
 print(f'{"hello world":>20}')  # right justify with space filler
 print(f'{"hello world":.>20}') # right justify with dot filler
-print(f'{20:.<9}{10}')        # left justify
+print(f'{20:.<9}{10}')         # left justify
 # str.format()
 print('{} {:.3f}'.format('str.format', math.pi))
 # printf-style
@@ -44,3 +44,27 @@ print()
 # iterate using indexes
 for i in range(len(seq)):
 	print(i, seq[i])
+
+# slices
+print('\nSlices')
+s = 'ABCDEFGHIJ'
+print(s[0:5])
+print(s[0:8:2])
+print(s[0:5], s[:5])      # both ABCDE
+print(s[5:len(s)], s[5:]) # both FGHIJ
+print(s, s[::], s[::1], s[::-1]) # these are all identical, except last is reversed
+# slice dna sequence into codons
+dna = 'ATGCTGTAA'
+for i in range(0, len(dna), 3):
+	codon = dna[i:i+3]
+	print(i, codon)
+
+# tuples
+print('\nTuples')
+tax = ('Homo', 'sapiens', 9606) # make a tuple
+print(tax)                      # parentheses will be in the output
+# tuples are also immutable (like strings)
+# s[0] = 'C' # error
+# tax[0] = 'human' # error
+print(tax[0])    # index at beginning
+print(tax[::-1]) # slice that reverses order
