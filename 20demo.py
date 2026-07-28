@@ -31,3 +31,16 @@ print(f'{20:.<9}{10}')        # left justify
 print('{} {:.3f}'.format('str.format', math.pi))
 # printf-style
 print('%s %.3f' % ('printf', math.pi))
+
+# indexes
+print('\nIndexes')
+seq = 'GAATTC'
+print(seq[0], seq[1])
+print(seq[-1])
+# iterate through characters in a string
+for nt in seq:
+	print(nt, end='')
+print()
+# iterate using indexes
+for i in range(len(seq)):
+	print(i, seq[i])
