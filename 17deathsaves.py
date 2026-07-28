@@ -16,12 +16,12 @@ def death_throw(option):
 		roll = random.randint(1, 20)
 		if option == 'print': print(roll) # shows each roll if specified
 		# check the result of the roll and either revive or increment counters
-		if roll == 20  : return 'Revive'
+		if roll == 20:   return 'Revive'
 		elif roll >= 10: stable += 1
-		elif roll == 1 : death  += 2
-		else           : death  += 1
+		elif roll == 1:  death  += 2
+		else:            death  += 1
 	# if while loop exits, you are either stable or dead
-	if stable >= 3 : return 'Stable'
+	if stable >= 3:  return 'Stable'
 	elif death >= 3: return 'Death'
 # test code
 print(death_throw('print'))
@@ -32,7 +32,7 @@ stable = death = revive = total = 0 # reinitialize counters
 for i in range(1, 10000):
 	if death_throw(None) == 'Revive': revive += 1
 	if death_throw(None) == 'Stable': stable += 1
-	if death_throw(None) == 'Death' : death  += 1
+	if death_throw(None) == 'Death':  death  += 1
 	total += 1
 # test code
 print()

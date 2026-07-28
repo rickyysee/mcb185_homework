@@ -7,10 +7,10 @@ import random
 def saving_throw(DC, adv):
 	# check if there is advantage and roll two dice in either scenario
 	if adv == 'disadvantage': roll = min(random.randint(1, 20), random.randint(1, 20))
-	elif adv == 'advantage' : roll = max(random.randint(1, 20), random.randint(1, 20))
-	else                    : roll = random.randint(1, 20)
+	elif adv == 'advantage':  roll = max(random.randint(1, 20), random.randint(1, 20))
+	else:                     roll = random.randint(1, 20)
 	# check if the roll passes the difficulty class (DC)
-	if roll >= DC : return 'Success'
+	if roll >= DC:  return 'Success'
 	elif roll < DC: return 'Failure'
 # test code
 print('DC', 'ADV', 'Result', sep='\t')

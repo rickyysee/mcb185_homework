@@ -50,11 +50,9 @@ def is_prime(n):
 	if n == 0 or n == 1: return False # 0 and 1 are not prime
 	if n == 2:           return True  # 2 is prime
 	if n % 2 == 0:       return False # other even numbers are not prime
-	factors = 0 # set the number of factors to 0
-	for i in range(1, n//2):
-		if n % i == 0:   factors = factors + 1 # count number of factors to n-1
-		if factors > 1:  return False # if more than 1 factors (1 is known)
-	return True # if not enough factors found, number is prime
+	for i in range(2, n//2):
+		if n % i == 0:   return False # if any number from 2 to half the number is a factor, not prime
+	return True # if we don't find a factor, return True
 # test code
 print('\nPrime numbers:')
 for i in range(0,11): print(i, is_prime(i)) # for loop of tests
