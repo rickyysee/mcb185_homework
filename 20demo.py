@@ -93,3 +93,8 @@ for nt, name in zip(nts, names):
 print('\nenumerate() the zip():')
 for i, (nt, name) in enumerate(zip(nts, names)):
 	print(i, nt, name)
+
+# lists
+# similar to tuples but they are made with brackets [,,] and are mutable
+nts = ['A', 'T', 'C']
+print(nts)
