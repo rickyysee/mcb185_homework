@@ -78,7 +78,6 @@ for i in range(len(nts)):
 print('\nenumerate():')
 for i, nt in enumerate(nts):
 	print(i, nt)
-
 # zip()
 # zip can be used to iterate through two different containers in parallel
 print('\nrange():')
@@ -88,7 +87,6 @@ for i in range(len(names)):
 print('\nzip():')
 for nt, name in zip(nts, names):
 	print(nt, name)
-
 # enumerate the zip
 print('\nenumerate() the zip():')
 for i, (nt, name) in enumerate(zip(nts, names)):
@@ -96,15 +94,37 @@ for i, (nt, name) in enumerate(zip(nts, names)):
 
 # lists
 # similar to tuples but they are made with brackets [,,] and are mutable
+print('\nlists')
 nts = ['A', 'T', 'C']
 print(nts)
 # can change elements of a list
 nts[2] = 'G'
 print(nts)
-
 # can add element to end of a list with list.append()
 nts.append('C')
 print(nts)
 # can remove elements with list.pop()
 last = nts.pop()
 print(nts)
+# can sort similar type of elements in a list with list.sort()
+nts.sort()
+print(nts)
+nts.sort(reverse=True)
+print(nts)
+# you can give lists new names (this doesn't create a new list)
+nucleotides = nts
+nucleotides.append('C')
+nucleotides.sort()
+print(nts, nucleotides)
+# to make a copy, use list.copy() (complex data structures will not be copied)
+# list()
+# can be used to create empty lists
+items = list()
+print(items)
+items.append('eggs')
+print(items)
+# can also use empty brackets
+stuff = []
+print(stuff)
+stuff.append(3)
+print(stuff)
