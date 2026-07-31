@@ -68,3 +68,28 @@ print(tax)                      # parentheses will be in the output
 # tax[0] = 'human' # error
 print(tax[0])    # index at beginning
 print(tax[::-1]) # slice that reverses order
+
+# enumerate()
+# enumerate can be used to produce a tuple with index and value of a container
+nts = 'ACGT'
+print('\nrange():')
+for i in range(len(nts)):
+	print(i, nts[i])
+print('\nenumerate():')
+for i, nt in enumerate(nts):
+	print(i, nt)
+
+# zip()
+# zip can be used to iterate through two different containers in parallel
+print('\nrange():')
+names = ('adenine', 'cytosine', 'guanine', 'thymine')
+for i in range(len(names)):
+	print(nts[i], names[i])
+print('\nzip():')
+for nt, name in zip(nts, names):
+	print(nt, name)
+
+# enumerate the zip
+print('\nenumerate() the zip():')
+for i, (nt, name) in enumerate(zip(nts, names)):
+	print(i, nt, name)
