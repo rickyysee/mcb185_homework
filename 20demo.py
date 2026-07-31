@@ -98,3 +98,13 @@ for i, (nt, name) in enumerate(zip(nts, names)):
 # similar to tuples but they are made with brackets [,,] and are mutable
 nts = ['A', 'T', 'C']
 print(nts)
+# can change elements of a list
+nts[2] = 'G'
+print(nts)
+
+# can add element to end of a list with list.append()
+nts.append('C')
+print(nts)
+# can remove elements with list.pop()
+last = nts.pop()
+print(nts)
