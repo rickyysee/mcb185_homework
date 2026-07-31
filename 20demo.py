@@ -128,3 +128,10 @@ stuff = []
 print(stuff)
 stuff.append(3)
 print(stuff)
+# list() will coerce iterables into lists
+alph = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+print(alph)
+aas = list(alph)
+print(aas)
+
+# split() and join()
