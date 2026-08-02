@@ -79,6 +79,7 @@ for i in range(len(nts)):
 print('\nenumerate() produces a tuple with indexes and values:')
 for i, nt in enumerate(nts):
 	print(i, nt)
+
 # zip()
 # zip can be used to iterate through two different containers in parallel
 print('\nusing range():')
@@ -118,6 +119,7 @@ nucleotides.append('C')
 nucleotides.sort()
 print(nts, nucleotides)
 # to make a copy, use list.copy() (complex data structures will not be copied)
+
 # list()
 # can be used to create empty lists
 items = list()
@@ -135,7 +137,7 @@ print(alph)
 aas = list(alph)
 print(aas)
 
-# split() and join()
+# split()
 print('\nsplit() separates strings into a list')
 text = 'good day			to you'
 words = text.split()
@@ -145,3 +147,18 @@ print(words)
 line = '1.41,2.72,3.14'
 print(line)
 print(line.split(','))
+
+# join()
+print('\njoin() turns lists into strings')
+print(aas)
+s = '-'.join(aas)
+print(s)
+s = ''.join(aas)
+print(s)
+
+# searching
+# keyword `in` searches if an item exists in a container
+print('\nsearching can be done many ways')
+print(alph)
+if 'A' in alph: print('A')
+if 'a' in alph: print('a')
