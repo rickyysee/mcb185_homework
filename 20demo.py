@@ -19,7 +19,7 @@ print(s.replace('o', ''))
 print(s.replace('o', '').replace('r', 'i'))
 
 # string formatting
-print('\nString Formatting')
+print('\nthere are different ways to work with strings')
 # f-strings
 print(f'{math.pi}')            # does nothing really
 print(f'{math.pi:.3f}')        # 3 fixed digits after decimal
@@ -33,7 +33,7 @@ print('{} {:.3f}'.format('str.format', math.pi))
 print('%s %.3f' % ('printf', math.pi))
 
 # indexes
-print('\nIndexes')
+print('\nindexes are used to identify characters in a string')
 seq = 'GAATTC'
 print(seq[0], seq[1])
 print(seq[-1])
@@ -46,12 +46,12 @@ for i in range(len(seq)):
 	print(i, seq[i])
 
 # slices
-print('\nSlices')
+print('\nslices are a portion of a container')
 s = 'ABCDEFGHIJ'
 print(s[0:5])
 print(s[0:8:2])
-print(s[0:5], s[:5])      # both ABCDE
-print(s[5:len(s)], s[5:]) # both FGHIJ
+print(s[0:5], s[:5])             # both ABCDE
+print(s[5:len(s)], s[5:])        # both FGHIJ
 print(s, s[::], s[::1], s[::-1]) # these are all identical, except last is reversed
 # slice dna sequence into codons
 dna = 'ATGCTGTAA'
@@ -60,7 +60,7 @@ for i in range(0, len(dna), 3):
 	print(i, codon)
 
 # tuples
-print('\nTuples')
+print('\ntuples store items and are immutable')
 tax = ('Homo', 'sapiens', 9606) # make a tuple
 print(tax)                      # parentheses will be in the output
 # tuples are also immutable (like strings)
@@ -69,22 +69,23 @@ print(tax)                      # parentheses will be in the output
 print(tax[0])    # index at beginning
 print(tax[::-1]) # slice that reverses order
 
+print('\nsometimes we want both indexes and values')
 # enumerate()
 # enumerate can be used to produce a tuple with index and value of a container
 nts = 'ACGT'
-print('\nrange():')
+print('using range():')
 for i in range(len(nts)):
 	print(i, nts[i])
-print('\nenumerate():')
+print('\nenumerate() produces a tuple with indexes and values:')
 for i, nt in enumerate(nts):
 	print(i, nt)
 # zip()
 # zip can be used to iterate through two different containers in parallel
-print('\nrange():')
+print('\nusing range():')
 names = ('adenine', 'cytosine', 'guanine', 'thymine')
 for i in range(len(names)):
 	print(nts[i], names[i])
-print('\nzip():')
+print('\nzip() iterates through two different containers in parallel:')
 for nt, name in zip(nts, names):
 	print(nt, name)
 # enumerate the zip
@@ -94,7 +95,7 @@ for i, (nt, name) in enumerate(zip(nts, names)):
 
 # lists
 # similar to tuples but they are made with brackets [,,] and are mutable
-print('\nlists')
+print('\nlists store items and are mutable')
 nts = ['A', 'T', 'C']
 print(nts)
 # can change elements of a list
@@ -135,3 +136,12 @@ aas = list(alph)
 print(aas)
 
 # split() and join()
+print('\nsplit() separates strings into a list')
+text = 'good day			to you'
+words = text.split()
+print(text)
+print(words)
+# can also be helpful when dealing with TSV or CSV data
+line = '1.41,2.72,3.14'
+print(line)
+print(line.split(','))
