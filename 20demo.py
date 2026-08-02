@@ -99,66 +99,57 @@ for i, (nt, name) in enumerate(zip(nts, names)):
 print('\nlists store items and are mutable')
 nts = ['A', 'T', 'C']
 print(nts)
-# can change elements of a list
-nts[2] = 'G'
+nts[2] = 'G'    # can change elements of a list
 print(nts)
-# can add element to end of a list with list.append()
-nts.append('C')
+nts.append('C')  # add element to list
 print(nts)
-# can remove elements with list.pop()
-last = nts.pop()
+last = nts.pop() # remove element from list
 print(nts)
-# can sort similar type of elements in a list with list.sort()
-nts.sort()
+nts.sort()       # sorts similar types of elements
 print(nts)
 nts.sort(reverse=True)
 print(nts)
-# you can give lists new names (this doesn't create a new list)
-nucleotides = nts
+nucleotides = nts # can give lists new names but won't copy
 nucleotides.append('C')
 nucleotides.sort()
 print(nts, nucleotides)
 # to make a copy, use list.copy() (complex data structures will not be copied)
 
 # list()
-# can be used to create empty lists
-items = list()
+items = list()   # creates an empty list
 print(items)
 items.append('eggs')
 print(items)
-# can also use empty brackets
-stuff = []
+stuff = []       # creates an empty list
 print(stuff)
 stuff.append(3)
 print(stuff)
-# list() will coerce iterables into lists
 alph = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 print(alph)
-aas = list(alph)
+aas = list(alph) # coerce into iterable
 print(aas)
 
 # split()
 print('\nsplit() separates strings into a list')
 text = 'good day			to you'
-words = text.split()
+words = text.split()   # split on whitespace
 print(text)
 print(words)
-# can also be helpful when dealing with TSV or CSV data
 line = '1.41,2.72,3.14'
 print(line)
-print(line.split(','))
+print(line.split(',')) # split on comma (good for CSV)
 
 # join()
 print('\njoin() turns lists into strings')
 print(aas)
-s = '-'.join(aas)
+s = '-'.join(aas) # join into string with '-' spacers
 print(s)
-s = ''.join(aas)
+s = ''.join(aas)  # join into string without spacers
 print(s)
 
 # searching
 # keyword `in` searches if an item exists in a container
 print('\nsearching can be done many ways')
 print(alph)
-if 'A' in alph: print('A')
-if 'a' in alph: print('a')
+if 'A' in alph: print('A') # search for A in capital alphabet
+if 'a' in alph: print('a') # search for a, will not print
