@@ -149,7 +149,21 @@ print(s)
 
 # searching
 # keyword `in` searches if an item exists in a container
-print('\nsearching can be done many ways')
+print()
 print(alph)
+print('search with `in`:')
 if 'A' in alph: print('A') # search for A in capital alphabet
 if 'a' in alph: print('a') # search for a, will not print
+# index() method returns index of the first element it finds
+print('search with index() method:')
+print('index G?', alph.index('G'))
+print('index Z?', alph.index('Z'))
+# find() method returns index of first element or -1 if none found
+# note: only used in strings
+print('search with find() method:')
+print('find G?', alph.find('G'))
+print('find Z?', alph.find('Z'))
+# use `in` if you don't know if an element is in a list/tuple
+if 'D' in aas: print('D in list?', aas.index('D'))
+
+# practice problems

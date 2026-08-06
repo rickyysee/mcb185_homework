@@ -1,6 +1,7 @@
-# data files
+# data/misc files
 *.gz
 *.txt
+*.md
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
