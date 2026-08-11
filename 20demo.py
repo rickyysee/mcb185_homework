@@ -167,3 +167,27 @@ print('find Z?', alph.find('Z'))
 if 'D' in aas: print('D in list?', aas.index('D'))
 
 # practice problems
+# min value of a list
+def list_min(list):
+	list.sort()
+	return list[0]
+# min and max values of a list
+def min_max(list):
+	list.sort()
+	min = list[0]
+	max = list[len(list)-1]
+	return min, max
+# mean of values in a list
+def list_mean(list):
+	sum = 0
+	for i in range(0, len(list)):
+		sum = sum + list[i]
+	return sum / len(list)
+
+# test code
+test_list = [6, 31, 10, 4]
+print()
+print(test_list)
+print('min:', list_min(test_list))
+print('min and max:', min_max(test_list))
+print('mean:', list_mean(test_list))
