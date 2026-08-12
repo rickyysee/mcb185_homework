@@ -252,10 +252,17 @@ print()
 # sys.argv is the list of words on the command line (argv = argument vector)
 # sys.argv[0] is the program name
 # sys.argv[1] is the first argument if there is one
-
 import sys
-
 print(sys.argv)
-
 # sys.argv is a list, so it will have brackets
 # numeric values have quotes bc they are strings
+
+# converting types
+# input(), sys.argv, and file data are stored as strings
+# int() and float() can convert data to those respective types
+i = int('42')
+x = float('0.61803')
+print(i * x)
+# x = float('hello') # returns a ValueError
+# further reading on error conditions in Python: assert, try, except, or raise
+# use sys.exit() to provide a custome error message
