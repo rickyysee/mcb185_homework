@@ -243,3 +243,19 @@ print('prob distribution Q:', prob_q)
 print('entropy of P:', entropy(prob_p))
 print('kullback-leibler distance between P and Q:', kb_dist(prob_p, prob_q))
 
+# external data
+print()
+# input() gets a line of input from user
+# line = input('type something and hit return: ')
+# print('that line what', len(line), 'characters long')
+
+# sys.argv is the list of words on the command line (argv = argument vector)
+# sys.argv[0] is the program name
+# sys.argv[1] is the first argument if there is one
+
+import sys
+
+print(sys.argv)
+
+# sys.argv is a list, so it will have brackets
+# numeric values have quotes bc they are strings
