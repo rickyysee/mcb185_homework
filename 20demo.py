@@ -169,15 +169,20 @@ if 'D' in aas: print('D in list?', aas.index('D'))
 
 # practice problems
 print('\nPractice Problems:')
+
 # min value of a list
 def list_min(list):
-	list.sort()
-	return list[0]
+	min = list[0]
+	for i in list[1:]:
+		if i < min: return i
+	return min
 # min and max values of a list
 def min_max(list):
-	list.sort()
 	min = list[0]
-	max = list[len(list)-1]
+	max = list[0]
+	for i in list[1:]:
+		if i < min:   min = i
+		elif i > max: max = i
 	return min, max
 # mean of values in a list
 def list_mean(list):
@@ -200,7 +205,6 @@ def entropy(prob):
 	for i in prob:
 		entropy.append(-math.log2(i))
 	return entropy
-
 # kullback-leibler distance between two sets of probability distributions
 # d(p||k) = sum( p(x) * log((p(x))/(q(x))) )
 def kb_dist(prob_p, prob_q):
@@ -209,8 +213,7 @@ def kb_dist(prob_p, prob_q):
 		sum = sum + prob_p[i] * math.log2(prob_p[i] / prob_q[i])
 	return sum
 # test code
-print()
-print('entropy of probability distribution')
+print('\nentropy of probability distribution')
 prob_q = [0.05, 0.15, 0.2, 0.5, 0.1]
 prob_p = []
 for i in range(0, 5):
@@ -219,3 +222,4 @@ print('prob distribution P:', prob_p)
 print('prob distribution Q:', prob_q)
 print('entropy of P:', entropy(prob_p))
 print('kullback-leibler distance between P and Q:', kb_dist(prob_p, prob_q))
+
