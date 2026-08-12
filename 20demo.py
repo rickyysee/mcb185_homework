@@ -1,6 +1,7 @@
 # 20demo.py by Ricky Cantua
 
 import math
+import random
 
 # strings are wrapped in quotes
 s = 'hello world'
@@ -167,6 +168,7 @@ print('find Z?', alph.find('Z'))
 if 'D' in aas: print('D in list?', aas.index('D'))
 
 # practice problems
+print('\nPractice Problems:')
 # min value of a list
 def list_min(list):
 	list.sort()
@@ -183,11 +185,37 @@ def list_mean(list):
 	for i in range(0, len(list)):
 		sum = sum + list[i]
 	return sum / len(list)
-
 # test code
 test_list = [6, 31, 10, 4]
 print()
-print(test_list)
+print('test list:', test_list)
 print('min:', list_min(test_list))
 print('min and max:', min_max(test_list))
 print('mean:', list_mean(test_list))
+
+# entropy of a probability distribution
+# information(x) = -log_2(p(x))
+def entropy(prob):
+	entropy = []
+	for i in prob:
+		entropy.append(-math.log2(i))
+	return entropy
+
+# kullback-leibler distance between two sets of probability distributions
+# d(p||k) = sum( p(x) * log((p(x))/(q(x))) )
+def kb_dist(prob_p, prob_q):
+	sum = 0
+	for i in range(0, len(prob_q)):
+		sum = sum + prob_p[i] * math.log2(prob_p[i] / prob_q[i])
+	return sum
+# test code
+print()
+print('entropy of probability distribution')
+prob_q = [0.05, 0.15, 0.2, 0.5, 0.1]
+prob_p = []
+for i in range(0, 5):
+	prob_p.append(random.random())
+print('prob distribution P:', prob_p)
+print('prob distribution Q:', prob_q)
+print('entropy of P:', entropy(prob_p))
+print('kullback-leibler distance between P and Q:', kb_dist(prob_p, prob_q))
