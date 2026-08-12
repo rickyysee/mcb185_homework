@@ -176,6 +176,7 @@ def list_min(list):
 	for i in list[1:]:
 		if i < min: return i
 	return min
+
 # min and max values of a list
 def min_max(list):
 	min = list[0]
@@ -184,12 +185,14 @@ def min_max(list):
 		if i < min:   min = i
 		elif i > max: max = i
 	return min, max
+
 # mean of values in a list
 def list_mean(list):
 	sum = 0
 	for i in range(0, len(list)):
 		sum = sum + list[i]
 	return sum / len(list)
+
 # test code
 test_list = [6, 31, 10, 4]
 print()
@@ -198,26 +201,43 @@ print('min:', list_min(test_list))
 print('min and max:', min_max(test_list))
 print('mean:', list_mean(test_list))
 
+# return a random list with probabilities that add up to 1.0
+def prob_list(n):
+	plist = []
+	sum = 0
+	for i in range(0, n):          # get random ints from 0-100
+		roll = random.randint(0, 100)
+		sum = sum + roll
+		plist.append(roll)
+	for i in range(0, len(plist)): # divide each int by the total
+		plist[i] = plist[i] / sum
+	return plist
+
 # entropy of a probability distribution
-# information(x) = -log_2(p(x))
+# information(x) = -sum( p(x) * log_2(p(x)) )
 def entropy(prob):
-	entropy = []
+	sum = 0
+	entropy = 0
 	for i in prob:
-		entropy.append(-math.log2(i))
+		if i != 0:
+			sum = sum + i
+			entropy = entropy - (i * math.log2(i))
+	if sum < 0.9 or sum > 1.1: return None
 	return entropy
+
 # kullback-leibler distance between two sets of probability distributions
 # d(p||k) = sum( p(x) * log((p(x))/(q(x))) )
 def kb_dist(prob_p, prob_q):
 	sum = 0
-	for i in range(0, len(prob_q)):
-		sum = sum + prob_p[i] * math.log2(prob_p[i] / prob_q[i])
+	for p, q in zip(prob_p, prob_q):
+		if p != 0 and q != 0:
+			sum = sum + p * math.log2(p / q)
 	return sum
+
 # test code
 print('\nentropy of probability distribution')
 prob_q = [0.05, 0.15, 0.2, 0.5, 0.1]
-prob_p = []
-for i in range(0, 5):
-	prob_p.append(random.random())
+prob_p = prob_list(5)
 print('prob distribution P:', prob_p)
 print('prob distribution Q:', prob_q)
 print('entropy of P:', entropy(prob_p))
