@@ -266,3 +266,13 @@ print(i * x)
 # x = float('hello') # returns a ValueError
 # further reading on error conditions in Python: assert, try, except, or raise
 # use sys.exit() to provide a custome error message
+
+# pairwise comparisons
+list = [0, 1, 2, 3, 4, 5]
+
+# for i in range(0, len(list)):
+# 	for j in range(X, len(list)):
+
+# X = 0: all combinations
+# X = i: half matrix with diagonal
+# X = i+1: half matrix without diagonal 
