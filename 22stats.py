@@ -40,16 +40,12 @@ def sd(list):
 	total = total / (len(list) - 1)
 	return total ** (1/2)
 
-# median without sorting (by removing min and max values sequentially)
-# revisit this, it seems wildly inefficient
+# median without sorting (use the median of medians method)
 def median(list):
 	if len(list) == 1: return list[0]
 	if len(list) == 2: return (list[0] + list[1]) / 2
-	while len(list) > 1:
-		list.pop(list.index(min(list)))
-		list.pop(list.index(max(list)))
-		if len(list) == 1: return list[0]
-		if len(list) == 2: return (list[0] + list[1]) / 2
+	for i in range(0, 5):
+		print(list[i])
 
 print('number of values:', len(nums))
 print('min and max:', min(nums), max(nums))
