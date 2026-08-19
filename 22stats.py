@@ -8,9 +8,11 @@ import sys
 
 # get numbers from command line
 nums = []
+if len(sys.argv) <= 1: sys.exit('Please provide a list of numbers as arguments.')
 for i in sys.argv[1:]:
 	num = float(i)
 	nums.append(num)
+print(nums)
 
 # min and max
 def min(list):
