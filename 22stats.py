@@ -55,4 +55,4 @@ def median(list):
 print('number of values:', len(nums))
 print('min and max:', min(nums), max(nums))
 print('mean and sd:', mean(nums), sd(nums))
-print('median:', get_median(nums))
+print('median:', median(nums))
