@@ -42,34 +42,15 @@ def sd(list):
 	total = total / (len(list) - 1)
 	return total ** (1/2)
 
-# median without sorting (use the median of medians method)
-# adapted from brillian.org
-
-# handles function calls for odd or even numbered lists
-def get_median(list):
-	i = len(list)
-	if i % 2 == 1: 
-		return median_medians(list, i//2)
-	if i % 2 == 0: 
-		return (median_medians(list, i//2) + median_medians(list, i//2 - 1)) / 2
-
-def median_medians(list, i):
-	# make lists of 5 or less, then find their medians
-	sublists = [list[j:j+5] for j in range(0, len(list), 5)]
-	medians = [sorted(sublist)[len(sublist)//2] for sublist in sublists]
-
-	# choose a good pivot point
-	if len(medians) <= 5: pivot = sorted(medians)[len(medians)//2]
-	else:                 pivot = median_medians(medians, len(medians)//2)
-
-	# partition list to values smaller/bigger than pivot
-	lo = [j for j in list if j < pivot]
-	hi = [j for j in list if j > pivot]
-
-	k = len(lo)
-	if i < k:   return median_medians(lo, i)
-	elif i > k: return median_medians(hi, i - k - 1)
-	else:         return pivot
+# nevermind, median of medians seemed to exceed recursion depth on large lists?
+# median by sorting
+def median(list):
+	n = len(list)
+	list.sort()
+	if n % 2 == 0:
+		return (list[n//2] + list[n//2 - 1]) / 2
+	else:
+		return list[n//2]
 
 print('number of values:', len(nums))
 print('min and max:', min(nums), max(nums))
