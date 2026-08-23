@@ -44,8 +44,11 @@ def sd(list):
 
 # median without sorting (use the median of medians method)
 def median(list):
-	if len(list) == 1: return list[0]
-	if len(list) == 2: return (list[0] + list[1]) / 2
+	n = len(list)
+	if n <= 10:
+		list.sort()
+		if n % 2 == 1: return list[n//2]
+		else:          return (list[n//2] + list[n//2 - 1]) / 2
 	for i in range(0, 5):
 		print(list[i])
 
