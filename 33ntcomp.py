@@ -10,7 +10,7 @@ for defline, seq in mcb185.read_fasta(sys.argv[1]):
 		if nt not in nts:
 			nts.append(nt)
 			counts.append(0)
-		idx = nts.index(nt)
+		idx = nts.index(nt) # use index bc find gives -1 to unknowns
 		counts[idx] += 1
 	print(name)
 	for nt, n in zip(nts, counts):
