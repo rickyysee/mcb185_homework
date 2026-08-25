@@ -20,3 +20,12 @@ with gzip.open(path, 'rt') as fp:
 	for line in fp:
 		print(line, end='')
 '''
+
+# continue statement jumps to the next iteration of a loop
+'''
+with gzip.open(path, 'rt') as fp:
+	for line in fp:
+		if line.startswith('#'): continue
+		print(line)
+'''
+# the above code will print lines that do not begin with '#'
