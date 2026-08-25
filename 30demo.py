@@ -29,3 +29,4 @@ with gzip.open(path, 'rt') as fp:
 		print(line)
 '''
 # the above code will print lines that do not begin with '#'
+
