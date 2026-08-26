@@ -14,6 +14,17 @@ def revcomp(dna):
 		else:           rc.append('N')
 	return ''.join(rc) 
 
+# get GC composition of a dna sequence
+def gc_comp(seq):
+	return (seq.count('C') + seq.count('G')) / len(seq)
+
+# get the GC-skew along length of a dna sequence
+def gc_skew(seq):
+	c = seq.count('C')
+	g = seq.count('G')
+	if c + g == 0: return 0
+	return (g - c) / (g + c)
+
 # translate a dna sequence to amino acid sequence
 def translate(dna):
 	codons = ('ATG', 'TAA', 'TAG', 'TGA')
