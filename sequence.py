@@ -6,22 +6,25 @@ def transcribe(dna):
 # get the reverse complement of a dna sequence
 def revcomp(dna):
 	rc = []
-	for nt in dna[::-1]: # iterate backwards through sequence
-		# fill in complement of base
+	for nt in dna[::-1]:
 		if   nt == 'A': rc.append('T')
 		elif nt == 'C': rc.append('G')
 		elif nt == 'G': rc.append('C')
 		elif nt == 'T': rc.append('A')
 		else:           rc.append('N')
-	return ''.join(rc) # return rc as a string
+	return ''.join(rc) 
 
+# translate a dna sequence to amino acid sequence
 def translate(dna):
+	codons = ('ATG', 'TAA', 'TAG', 'TGA')
+	aminos = 'M***'
 	aas = []
-	for i in range(0, len(dna), 3): # step through indexes by 3
-		codon = dna[i:i+3] # slice seq into chunks of 3
-		if   codon == 'ATG': aas.append('M')
-		elif codon == 'TAA': aas.append('*')
-		elif codon == 'TAG': aas.append('*')
-		elif codon == 'TGA': aas.append('*')
-		else:                aas.append('X')
+	for i in range(0, len(dna), 3):
+		codon = dna[i:i+3]
+		if codon in codons:
+			idx = codons.index(codon)
+			aa = aminos[idx]
+			aas.append(aa)
+		else:
+			aas.append('X')
 	return ''.join(aas)
