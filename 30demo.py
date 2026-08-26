@@ -30,3 +30,12 @@ with gzip.open(path, 'rt') as fp:
 '''
 # the above code will print lines that do not begin with '#'
 
+# sliding window algorithm
+seq = 'abcdefghijklmnopqrstuvwxyz'
+w = 10
+s = 1
+for i in range(0, len(seq) -w +1, s):
+	subseq = seq[i:i+w]
+	print(subseq)
+# sliding windows can be used to create things like codons and k-mers
+
