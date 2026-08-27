@@ -1,4 +1,6 @@
 # data/misc files
+*.faa*
+*.fna*
 *.gz
 *.txt
 *.md
