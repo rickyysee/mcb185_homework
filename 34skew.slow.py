@@ -21,8 +21,6 @@ with gzip.open(file, 'rt') as fp:
 		seqs.append(line)
 	seq = ''.join(seqs)
 
-print(seq)
-
 # get gc-skew by counting within each window
 for i in range(len(seq) -w +1):
 	s = seq[i:i+w]

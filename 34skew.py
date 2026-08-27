@@ -44,5 +44,4 @@ for i in range(1, seq_length -w +1):
 	comp = (g + c) / w
 	if g + c == 0: skew = 0
 	else         : skew = (g - c) / (g + c)
-	print(i, comp, skew) 
-
+	print(i, comp, skew)
