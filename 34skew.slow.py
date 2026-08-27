@@ -16,6 +16,7 @@ seqs = []
 with gzip.open(file, 'rt') as fp:
 	for line in fp:
 		if line[0] == '#' or line[0] == '\n': continue
+		line = line.strip()
 		seqs.append(line)
 	seq = ''.join(seqs)
 
