@@ -32,10 +32,52 @@ with gzip.open(path, 'rt') as fp:
 
 # sliding window algorithm
 seq = 'abcdefghijklmnopqrstuvwxyz'
-w = 10
+w = 22
 s = 1
 for i in range(0, len(seq) -w +1, s):
 	subseq = seq[i:i+w]
 	print(subseq)
 # sliding windows can be used to create things like codons and k-mers
 
+# sets are mutable containers with unique, unordered elements
+s = {'A', 'C', 'G'}
+print(s)
+# add elements to a set with add() method
+s.add('A')
+print(s)
+# adding A doesn't do anything because it's already in the set
+# calling an index will throw an error
+# print(s[2]) # TypeError
+
+# dictionaries are like lists but indexes are strings
+# items in a dictionary exist as a key:value pair
+d = {}
+d = dict() 
+# both above generate empty dictionary
+d = {'dog' : 'woof', 'cat' : 'meow'}
+print(d)
+print(d['cat'])
+# to add items to a dict, assign a key:value pair
+d['pig'] = 'oink'
+print(d)
+# to change value of item, access its key
+d['cat'] = 'mew'
+print(d)
+# to delete an item, use del keyword
+del d['cat']
+print(d)
+# accessing a key that doesn't exist throws an error
+# print(d['rat']) # KeyError
+# to check if a key exists, use in
+if 'dog' in d: print(d['dog'])
+
+# iterating through a dictionary
+# for loop iterates over keys in order they were created
+for key in d: print(f'{key} says {d[key]}')
+# using dict.items() is a common way to iterate
+for k, v in d.items(): print(k, 'says', v)
+# unpack tuples to avoid the following mess:
+for thing in d.items(): print(thing[0], 'says', thing[1])
+# there is also dict.keys() and dict.values()
+# if you want them as lists, coerce with list()
+print(d.keys(), d.values(), list(d.values()))
