@@ -81,3 +81,14 @@ for thing in d.items(): print(thing[0], 'says', thing[1])
 # there is also dict.keys() and dict.values()
 # if you want them as lists, coerce with list()
 print(d.keys(), d.values(), list(d.values()))
+
+# dictionaries make counting very fast
+count = {}
+seq = 'AGCTAGCAATCGCATCACCAATCGATACGGGGGGGGGTACAGGGCGATATAAGG'
+for nt in seq:
+	if nt not in count: count[nt] = 0
+	count[nt] += 1
+print(count)
+# you can easily sort a dict with the sorted() function
+for k in sorted(count): print(k, count[k])
+# sorting by values is more complex
