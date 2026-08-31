@@ -92,3 +92,16 @@ print(count)
 # you can easily sort a dict with the sorted() function
 for k in sorted(count): print(k, count[k])
 # sorting by values is more complex
+# sorted() expects a list of things to sort, which is the keys by default
+for k, v in sorted(count.items(), key=lambda item: item[1]):
+	print(k, v)
+# lambda indicates a tiny anonymous function
+# this lambda function returns the second element in the item tuple
+# below is the same operation done with a real function
+def by_value(tuple):
+	return tuple[1]
+
+for k, v in sorted(count.items(), key=by_value):
+	print(k, v)
+
+# k-mers are sequences of length k
