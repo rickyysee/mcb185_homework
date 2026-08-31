@@ -105,3 +105,4 @@ for k, v in sorted(count.items(), key=by_value):
 	print(k, v)
 
 # k-mers are sequences of length k
+# we can use itertools to generate all possible kmers
