@@ -106,3 +106,6 @@ for k, v in sorted(count.items(), key=by_value):
 
 # k-mers are sequences of length k
 # we can use itertools to generate all possible kmers
+import itertools
+for nts in itertools.product('ACGT', repeat=2):
+	print(nts)
