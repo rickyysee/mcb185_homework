@@ -109,3 +109,52 @@ for k, v in sorted(count.items(), key=by_value):
 import itertools
 for nts in itertools.product('ACGT', repeat=2):
 	print(nts)
+
+# multiple dimensions
+# sys.argv is 2 dimensional (list of strings)
+import sys
+print(sys.argv)
+print(sys.argv[0])
+print(sys.argv[0][1])
+
+d = [
+	'hello',
+	(3.14, 'pi'),
+	[-1, 0, 1],
+	{'year' : 2000, 'month': 7}
+]
+print(d[0][4], d[1][0], d[2][2], d[3]['month'])
+
+# arrays and matrices
+# some languages use arrays and lists as the same, not Python
+# arrays are linear containers where all elements are the same type (i.e. int)
+# matrices are multidimensional arrays and are rectangular
+
+# record is a data type with named fields (dict)
+# records are put into a list (catalog)
+oligo = {
+	'Name' : 'SO116',
+	'Length' : '18',
+	'Sequence' : 'ATATAGAGTCTCCCGACTAG',
+	'Description' : 'SP6 promoter sequencing primer'
+}
+catalog = []
+catalog.append(oligo)
+# lists of records can be long, so we usually read them in from spreadsheets
+# use this on MCB185/data/primers.csv
+def read_catalog(filepath):
+	catalog = []
+	with open(filepath) as fp:
+		for line in fp:
+			if line.startswith('#'): continue
+			name, length, seq, desc = line.rstrip().split(',')
+			record = {
+				'Name' : name,
+				'Length' : length,
+				'Sequence' : seq,
+				'Description' : desc
+			}
+			catalog.append(record)
+	return catalog
+
+catalog = read_catalog('primers')
