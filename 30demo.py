@@ -157,4 +157,18 @@ def read_catalog(filepath):
 			catalog.append(record)
 	return catalog
 
-catalog = read_catalog('primers')
+catalog = read_catalog('primers.csv')
+for primer in catalog:
+	print(primer['Name'], primer['Description'])
+# what if we wanted to count k-mers and record their location
+# everytime we find a new k-mer, we need to initialize a list and append its location
+seq = 'AGACATCCCGCATGACGATCAGTCACGCGCTAGCTCACGACTGCGCGCCCAAAAAAAAATCGCTAGCT'
+k = 2
+kloc = {}
+for i in range(len(seq) -k +1):
+	kmer = seq[i:i+k]
+	if kmer not in kloc: kloc[kmer] = []
+	kloc[kmer].append(i)
+print(kloc)
+# this behaves differently than counting each k-mer
+# running this on a large genome could crash a computer bc memory would run out
