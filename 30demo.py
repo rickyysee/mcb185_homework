@@ -172,3 +172,37 @@ for i in range(len(seq) -k +1):
 print(kloc)
 # this behaves differently than counting each k-mer
 # running this on a large genome could crash a computer bc memory would run out
+
+# complex data
+# we can combine data types to make more complex data sets other than spreadsheets
+{
+    "locus": "NC_000913",
+    "length": 4641652,
+    "type": "DNA",
+    "definition": "Escherichia coli str. K-12 substr. MG1655, complete...",
+    "reference": [
+        {
+            "authors": "Riley,M., Abe,T., Arnaud,M.B., Berlyn,M.K...",
+            "title": "Escherichia coli K-12: a cooperatively...",
+            "journal": "Nucleic Acids Res. 34 (1), 1-9 (2006)",
+            "pubmed": 16397293
+        },
+        {
+            "authors": "Hayashi,K., Morooka,N., Yamamoto,Y., Fujita,K...",
+            "title": "Highly accurate genome sequences of Escherichia...",
+            "journal": "Mol. Syst. Biol. 2, 2006 (2006)",
+            "pubmed": 16738553
+        }
+    ]
+}
+# this is a dict, where the value for reference is a list of dicts
+# this format is compatible with JSON (Javascript Object Notation)
+# double quotes only, true/false not capital, no trailing commas, no comments
+import json
+truc = {
+	'animals' : {'dog' : 'woof', 'cat' : 'meow', 'pig' : 'oink'},
+	'numbers' : [1.09, 2.72, 3.14],
+	'is_complete' : False,
+}
+# json library provides ways to read and write JSON
+print(json.dumps(truc, indent=4))
