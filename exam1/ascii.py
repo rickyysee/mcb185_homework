@@ -1,0 +1,1 @@
+print(f'{ord('A')},{ord('a')}')
