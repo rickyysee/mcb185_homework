@@ -59,4 +59,14 @@ def prob_to_phred(P):
 	ASCII = Q + 33
 	return chr(ASCII)
 
+# return hypotenuse of a right triangle with sides a and b
+def pythagoras(a, b):
+	c = (a**2 + b**2)**(1/2)
+	return c
 
+# return max of 3 numbers
+def max3(a, b, c):
+	if a >= b and a >= c:   max = a
+	elif b >= a and b >= c: max = b
+	else:                   max = c
+	return max

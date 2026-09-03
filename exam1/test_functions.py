@@ -38,3 +38,22 @@ probs = []
 for i in range(5): probs.append(random.random())
 for i in probs:
 	print(f'{i:.4f} error prob is: {functions.prob_to_phred(i)}')
+print()
+
+sides = [(3, 4), (41, 73), (6, 7), (20, 30)]
+for a, b in sides:
+	print(f'a: {a}\tb: {b}\tc: {functions.pythagoras(a, b):.2f}')
+print()
+
+# generate a list of 5 random numbers
+vals = []
+for i in range(5): vals.append(random.randint(-100, 100))
+
+# loop through all combinations of numbers
+for i in range(len(vals)):
+	for j in range(i+1, len(vals)):
+		for k in range(j+1, len(vals)):
+
+			# assign variables and call max3() function
+			a, b, c = vals[i], vals[j], vals[k]
+			print(f'a: {a}\tb: {b}\tc: {c}\tmax: {functions.max3(a, b, c)}')
