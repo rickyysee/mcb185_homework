@@ -70,3 +70,9 @@ def max3(a, b, c):
 	elif b >= a and b >= c: max = b
 	else:                   max = c
 	return max
+
+# compute Cartesian distance between two points on a graph
+def distance(x1, y1, x2, y2):
+	x = x2 - x1
+	y = y2 - y1
+	return pythagoras(x, y)

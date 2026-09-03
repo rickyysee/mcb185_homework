@@ -57,3 +57,13 @@ for i in range(len(vals)):
 			# assign variables and call max3() function
 			a, b, c = vals[i], vals[j], vals[k]
 			print(f'a: {a}\tb: {b}\tc: {c}\tmax: {functions.max3(a, b, c)}')
+print()
+
+# test cartesian function
+for i in range(len(vals)):
+	for j in range(i+1, len(vals)):
+		for k in range(j+1, len(vals)):
+			for l in range(k+1, len(vals)):
+
+				x1, y1, x2, y2 = vals[i], vals[j], vals[k], vals[l]
+				print(f'x1: {x1}\ty1: {y1}\tx2: {x2}\ty2: {y2}\tdist: {functions.distance(x1, y1, x2, y2):.2f}')
