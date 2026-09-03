@@ -27,7 +27,8 @@ def phred_to_prob(c):
 	Q = ord(c) - 33
 	return 10 ** (-Q / 10)
 
-## estimate logs of numbers greater than 2
+## BEGIN ##
+# estimate logs of numbers greater than 2 
 
 # use taylor series to estimate ln of small (0-2) numbers
 def taylor_ln(x, n=10):
@@ -49,6 +50,7 @@ def est_ln(x, n=10):
 
 # estimate logarithms of other bases
 def est_log(x, base=10, n=10): return est_ln(x, n) / est_ln(base, n)
+## END ##
 
 # convert error prob to PHRED quality symbol
 def prob_to_phred(P):
@@ -56,3 +58,5 @@ def prob_to_phred(P):
 	Q = int(Q // 1)
 	ASCII = Q + 33
 	return chr(ASCII)
+
+
