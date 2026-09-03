@@ -60,10 +60,7 @@ for i in range(len(vals)):
 print()
 
 # test cartesian function
-for i in range(len(vals)):
-	for j in range(i+1, len(vals)):
-		for k in range(j+1, len(vals)):
-			for l in range(k+1, len(vals)):
+x1, y1, x2, y2 = vals[0], vals[1], vals[2], vals[3]
+print(f'x1: {x1}\ty1: {y1}\tx2: {x2}\ty2: {y2}\tdist: {functions.distance(x1, y1, x2, y2):.2f}')
+print()
 
-				x1, y1, x2, y2 = vals[i], vals[j], vals[k], vals[l]
-				print(f'x1: {x1}\ty1: {y1}\tx2: {x2}\ty2: {y2}\tdist: {functions.distance(x1, y1, x2, y2):.2f}')

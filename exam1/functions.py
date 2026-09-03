@@ -76,3 +76,24 @@ def distance(x1, y1, x2, y2):
 	x = x2 - x1
 	y = y2 - y1
 	return pythagoras(x, y)
+
+# return triangular number (sum of ints from 1 to n) for non negative integer
+def triangular(n):
+	sum = 0
+	for i in range(1, n+1): sum = sum + i
+	return sum
+
+# return factorial of a non-negative integer
+def factorial(n):
+	tot = 1
+	for i in range(1, n+1): tot = tot * i
+	return tot
+
+# determine if an integer is a prime
+def is_prime(n):
+	prime = True
+	if n <= 1: return False
+	for i in range(2, n//2 + 1):
+		if n % i == 0: prime = False
+	return prime
+
