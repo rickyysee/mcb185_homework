@@ -1,4 +1,5 @@
 import functions
+import random
 
 ### test code ###
 for i in range(0, 100, 20):
@@ -31,3 +32,9 @@ print()
 print(f'ln(1.5): {functions.taylor_ln(1.5):.4f}')
 print(f'ln(100): {functions.est_ln(100):.4f}')
 print(f'log10(100): {functions.est_log(100):.4f}')
+print()
+
+probs = []
+for i in range(5): probs.append(random.random())
+for i in probs:
+	print(f'{i:.4f} error prob is: {functions.prob_to_phred(i)}')

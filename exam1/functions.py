@@ -51,3 +51,8 @@ def est_ln(x, n=10):
 def est_log(x, base=10, n=10): return est_ln(x, n) / est_ln(base, n)
 
 # convert error prob to PHRED quality symbol
+def prob_to_phred(P):
+	Q = -10 * est_log(P, 10)
+	Q = int(Q // 1)
+	ASCII = Q + 33
+	return chr(ASCII)
