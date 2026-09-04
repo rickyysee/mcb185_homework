@@ -85,9 +85,9 @@ def triangular(n):
 
 # return factorial of a non-negative integer
 def factorial(n):
-	tot = 1
-	for i in range(1, n+1): tot = tot * i
-	return tot
+	fact = 1
+	for i in range(1, n+1): fact = fact * i
+	return fact
 
 # determine if an integer is a prime
 def is_prime(n):
